@@ -1,0 +1,21 @@
+<!-- <h1>タイトル</h1>
+<% @title_datas.each do |title_data| %>
+<p><%= title_data %></p>
+<% end %>
+
+<h1>要約</h1>
+<% @summary_datas.each do |summary_data| %>
+<p><%= summary_data %></p>
+<% end %>
+
+<h1>タイトル</h1>
+<% @time_datas.each do |time_data| %>
+<p><%= time_data %></p>
+<% end %> -->
+
+<h1><%= "#{@day_time.year}年#{@day_time.month}月#{@day_time.mday}日  #{@day_time.hour}時#{@day_time.min}分" %>時点のPick up記事</h1>
+<% @title_datas.zip(@time_datas,@summary_datas).each do |title_data, time_data, summary_data| %>
+  <div class="title"><%= title_data %></div>
+  <div class="time"><%= time_data %></div>
+  <div class="summary"><%= summary_data %></div>
+<% end %>
