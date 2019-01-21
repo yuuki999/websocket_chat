@@ -1,0 +1,16 @@
+<h1>WebSocketでチャット</h1>
+<h4>WebSocketを使用したチャットができます</h4>
+<p>使用技術</p>
+<ul>
+<li>rails5.2.2</li>
+<li>ruby2.3.1</li>
+<li>mysql</li>
+</ul>
+<p>railsのAction Cableの機能を使用してWebSocketでの非同期の通信を実現しました。</p>
+<form>
+  <label>コメントを入力してください</label>
+  <input type="text" data-behavior="room_speaker">
+</form>
+<div class="messages">
+  <%= render @messages %>
+</div>
