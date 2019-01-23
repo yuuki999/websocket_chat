@@ -1,17 +1,30 @@
-<h1>WebSocketでチャット</h1>
-<%= link_to "スクレイピングページ", scrapes_path %>
-<h4>WebSocketを使用したチャットができます</h4>
-<p>使用技術</p>
-<ul>
-<li>rails5.2.2</li>
-<li>ruby2.3.1</li>
-<li>mysql</li>
-</ul>
-<p>railsのAction Cableの機能を使用してWebSocketでの非同期の通信を実現しました。</p>
-<form>
-  <label>コメントを入力してください</label>
-  <input type="text" data-behavior="room_speaker">
-</form>
-<div class="messages">
-  <%= render @messages %>
+<div class="webchat">
+  <h1 class="webchat__title">WebSocketでチャット</h1>
+  <%= link_to "スクレイピングページ", new_scrape_path, class: "webchat__link" %>
+  <div class="webchat-describe">
+    <h2>環境</h2>
+    <ul>
+      <li class="webchat-describe__item">rails5.2.2</li>
+      <li class="webchat-describe__item">ruby2.3.1</li>
+      <li class="webchat-describe__item">mysql</li>
+    </ul>
+    <p>railsのAction Cableの機能を使用してWebSocketでの通信を実現しました。</p>
+  </div>
+  <div class="webchat-form">
+    <form>
+      <label class="webchat-form__cin">名前を入力してください</label>
+    </br>
+      <input class="webchat-form__input-name" type="text">
+    </br>
+      <label class="webchat-form__cin">コメントを入力してください</label>
+    </br>
+      <input class="webchat-form__input-text" type="text">
+      <input class="webchat-form__button" type="submit" data-behavior="room_speaker">
+    </form>
+    <span class="webchat-form__n-title">名前</span>
+    <span class="webchat-form__c-title">コメント</span>
+    <div class="webchat-form__messages">
+      <%= render @messages %>
+    </div>
+  </div>
 </div>
