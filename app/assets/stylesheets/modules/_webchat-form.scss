@@ -1,0 +1,58 @@
+.webchat-form{
+  padding-top: 30px;
+  position: relative;
+  &__cin{
+    font-weight: bold;
+  }
+  &__input-name{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    margin: 20px 0;
+    &:focus{
+      outline: 0;
+    }
+  }
+  &__input-text{
+    width: 600px;
+    height: 30px;
+    font-size: 20px;
+    margin: 20px 0;
+    &:focus{
+      outline: 0;
+    }
+  }
+  &__button{
+    background:#9b4dca;
+    position: absolute;
+    top: 174px;
+    width: 50px;
+    height: 35px;
+    color: white;
+    margin-left: 10px;
+     &:focus{
+      outline: 0;
+    }
+  }
+  &__message{
+    margin: 10px 0 0 30px;
+    width: 600px;
+    display: inline-block;
+  }
+  &__name{
+    margin: 10px 0;
+    width: 300px;
+    display: inline-block;
+  }
+  &__messages{
+    margin-top: 20px;
+    width: 1000pxpx;
+  }
+  &__n-title{
+    font-weight: bold;
+  }
+  &__c-title{
+    margin-left: 300px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="scrapes">
+  <h1 class="scrapes__time-now"><%= "#{@day_time.year}年#{@day_time.month}月#{@day_time.mday}日  #{@day_time.hour}時#{@day_time.min}分" %>時点のyahoo Pick up記事</h1>
+  <%= link_to "戻る", root_path, class: "webchat__link" %>
+  <% @title_datas.zip(@time_datas,@summary_datas).each do |title_data, time_data, summary_data| %>
+    <div class="scrapes__box">
+      <div class="scrapes__title">
+        <h3><%= title_data %></h3>
+      </div>
+      <div class="scrapes__time">
+        <h4><%= time_data %></h4>
+      </div>
+      <div class="scrapes__summary"><%= summary_data %></div>
+    </div>
+  <% end %>
+</div>
+
