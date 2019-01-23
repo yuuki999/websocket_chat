@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
   def show
-    @messages = Message.all.limit(20).order("created_at DESC")
+    @messages = Message.all.limit(500)
   end
 end
