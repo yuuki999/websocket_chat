@@ -6,14 +6,14 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    result = $('.messages')
+    result = $('.webchat-form__messages')
     result.append(data['message'])
 
-  speak: (message)->
-    @perform 'speak', message: message
+  speak: (message, name)->
+    @perform 'speak', message: message, name: name
 
-  $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-    if event.keyCode is 13
-      App.room.speak event.target.value
-      event.target.value = ''
-      event.preventDefault()
+  $(document).on 'click', '.webchat-form__button', (event) ->
+    App.room.speak $('.webchat-form__input-text').val(),$('.webchat-form__input-name').val()
+    $('.webchat-form__input-text').val('')
+    $('.webchat-form__input-name').val('')
+    event.preventDefault()
